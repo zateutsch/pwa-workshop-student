@@ -1,4 +1,4 @@
-# Full Workshop Title
+# Get started with Progressive Web Apps
 
 ## Module Source Link
 
