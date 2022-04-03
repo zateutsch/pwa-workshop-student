@@ -50,10 +50,10 @@
   ],
   "shortcuts": [
     {
-      "name": "Open About",
-      "short_name": "About",
-      "description": "Open the about page",
-      "url": "/about",
+      "name": "Open Journal",
+      "short_name": "Journal",
+      "description": "Open the journal page",
+      "url": "/journal",
       "icons": [{ "src": "assets/icons/icon_192.png", "sizes": "192x192" }]
     }
   ]

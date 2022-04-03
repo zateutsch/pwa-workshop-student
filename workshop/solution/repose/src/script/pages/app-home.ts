@@ -13,7 +13,6 @@ export class AppHome extends LitElement {
 
   static get styles() {
     return css`
-
       .hero {
         height: 90vh;
         min-height: 600px;
@@ -140,6 +139,7 @@ export class AppHome extends LitElement {
           <div class="hero__top-content">
             <h1>Intelligent Daily Mood Journal</h1>
             <p>Repose is your personal mood tracking companion that helps you organize and reflect upon your daily thoughts.</p>
+            <fluent-anchor href="/journal" appearance="lightweight">Mood check-in</fluent-anchor>
           </div>
           <div class="hero__bottom-content">
           <img src="assets/media/humaaans.svg" alt="Humans">
