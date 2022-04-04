@@ -15,9 +15,8 @@ export class AppJournal extends LitElement {
   render() {
     return html`
       <app-header enableBack="${true}"></app-header>
-
       <div>
-        <h2>Journal Page</h2>
+        
       </div>
     `;
   }

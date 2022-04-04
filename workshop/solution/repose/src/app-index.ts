@@ -5,6 +5,7 @@ import { registerSW } from 'virtual:pwa-register';
 
 import './script/pages/app-home';
 import './script/components/header';
+import './script/components/hero-decor';
 import './styles/global.css';
 
 @customElement('app-index')

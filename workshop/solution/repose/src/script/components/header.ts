@@ -19,32 +19,13 @@ export class AppHeader extends LitElement {
         margin: 0 4rem;
       }
 
-      header h1 {
-        margin-top: 0;
-        margin-bottom: 0;
+      header fluent-anchor::part(control) {
+        text-decoration: none;
         font-size: 20px;
-        font-weight: bold;
       }
 
-      nav fluent-anchor {
-        margin-left: 10px;
-      }
-
-      #back-button-block {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 11em;
-      }
-
-      @media(prefers-color-scheme: light) {
-        header {
-          color: black;
-        }
-
-        nav fluent-anchor::part(control) {
-          color: initial;
-        }
+      header fluent-anchor::part(control):hover {
+        color: #45B08C;
       }
     `;
   }
@@ -62,12 +43,10 @@ export class AppHeader extends LitElement {
   render() {
     return html`
       <header>
-        <div id="back-button-block">
-          ${this.enableBack ? html`<fluent-anchor appearance="accent" href="/">
-            Back
-          </fluent-anchor>` : null}
-
-          <h1>${this.title}</h1>
+        <div>
+          ${this.enableBack ? html`<fluent-anchor appearance="hypertext" href="/">
+            ${this.title}
+          </fluent-anchor>` : html`<h2>${this.title}</h2>`}
         </div>
       </header>
     `;

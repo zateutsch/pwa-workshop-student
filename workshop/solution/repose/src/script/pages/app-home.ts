@@ -24,18 +24,6 @@ export class AppHome extends LitElement {
         position: relative;
       }
 
-      .hero__decor {
-        position: absolute;
-        background-color: #45B08C;
-        background-image: url('/assets/media/wave.webp');
-        background-repeat: no-repeat;
-        background-position: bottom;
-        top: 0px;
-        left: 0px;
-        right: 0px;
-        height: 45rem;
-      }
-
       .hero__inner {
         display: flex;
         flex-direction: column;
@@ -48,7 +36,7 @@ export class AppHome extends LitElement {
       .hero__top-content {
         flex: 1 1 0px;
         color: white;
-        margin: 5rem;
+        margin: 4rem 5rem 0;
         text-align: center;
       }
 
@@ -57,12 +45,27 @@ export class AppHome extends LitElement {
         font-size: 48px;
       }
 
+      .hero__top-content fluent-anchor {
+        margin-top: 1rem;
+      }
+
+      .hero__top-content fluent-anchor::part(control) {
+        border-radius: 15px;
+        color: #45B08C;
+      }
+
+      .hero__top-content fluent-anchor::part(control):hover {
+        color: #2E765E;
+      }
+
       .hero__bottom-content {
         flex: 1 1 0px;
+        height: 50vh;
       }
 
       .hero__bottom-content img {
         width: 100%;
+        height: 100%;
       }
 
       .footer {
@@ -74,47 +77,6 @@ export class AppHome extends LitElement {
         bottom: 0;
         left: 0;
         right: 0;
-      }
-
-      #mainInfo fluent-anchor::part(control), #infoCard fluent-anchor::part(control) {
-        color: white;
-      }
-
-      @media (min-width: 1024px) {
-        #welcomeCard,
-        #infoCard {
-          width: 54%;
-        }
-      }
-
-      @media (horizontal-viewport-segments: 2) {
-        #welcomeBar {
-          flex-direction: row;
-          align-items: flex-start;
-          justify-content: space-between;
-        }
-
-        #welcomeCard {
-          margin-right: 64px;
-        }
-      }
-
-      @media(prefers-color-scheme: light) {
-        fluent-card {
-          --fill-color: #edebe9;
-        }
-
-        #mainInfo fluent-anchor::part(control), #infoCard fluent-anchor::part(control) {
-          color: initial;
-        }
-      }
-
-      @media(prefers-color-scheme: dark) {
-        fluent-card {
-          --fill-color: #4e4e4e;
-          color: white;
-          border: none;
-        }
       }
     `;
   }
@@ -131,9 +93,9 @@ export class AppHome extends LitElement {
 
   render() {
     return html`
-      <app-header></app-header>
+      <app-header enableBack="${true}"></app-header>
       <div class="hero">
-        <div class="hero__decor"></div>
+        <hero-decor></hero-decor>
         <!-- <pwa-install>Install Repose</pwa-install> -->
         <div class="hero__inner">
           <div class="hero__top-content">
