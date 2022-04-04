@@ -5,6 +5,10 @@ import { customElement } from 'lit/decorators.js';
 export class AppJournal extends LitElement {
   static get styles() {
     return css`
+      .main {
+        padding: 0 48px;
+        position: relative;
+      }
     `;
   }
 
@@ -15,8 +19,8 @@ export class AppJournal extends LitElement {
   render() {
     return html`
       <app-header enableBack="${true}"></app-header>
-      <div>
-        
+      <div class="main">
+        <hero-decor></hero-decor>
       </div>
     `;
   }
