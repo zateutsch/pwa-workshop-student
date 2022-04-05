@@ -182,7 +182,7 @@ export class AppJournal extends LitElement {
           </div>
       </div>
 
-      <fluent-dialog id="errorDialog" hidden=${false}>
+      <fluent-dialog id="errorDialog" hidden=${true}>
         <h4> Make sure to add both a title and an entry for your daily mood journal.</h4>
         <fluent-button appearance="lightweight" @click=${this.dismissWarningDialog}>
           Try Again
