@@ -10,9 +10,9 @@ var journalDB: any;
 export class AppJournal extends LitElement {
   
   @property()
-  titlePlaceholder: string = "What do you want to title your journal entry?";
+  titlePlaceholder: string = "Title...";
   @property()
-  journalPlaceholder: string = "Write some thoughts, feelings, or ideas here.";
+  journalPlaceholder: string = "Add some thoughts, feelings, or ideas here...";
 
 
   static get styles() {
@@ -22,31 +22,59 @@ export class AppJournal extends LitElement {
         position: relative;
       }
 
-      .container {
+      .journal {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
       }
 
-      .title__entry {
-        width: 66vw;
-        
+      .journal h1 {
+        color: #fff;
+        font-weight: 200;
+        z-index: 0;
+        margin: 4rem 0 3rem;
       }
 
-      .title__entry fluent-text-field {
-        width: 66vw;
-        color: #2E765E;
+      .journal__slider {
+        margin-bottom: 4rem;
       }
 
-      .journal__entry {
-        width: 66vw;
+      .journal__slider fluent-slider {
+        min-width: 400px;
       }
 
-      .journal__entry fluent-text-area::part(control) {
+      .journal__slider fluent-slider::part(track-container) {
+        background: #fff;
+        border: none;
+      }
+
+      .journal__slider fluent-slider-label {
+        font-size: 1.5rem;
+      }
+
+      .journal__title fluent-text-field {
         width: 66vw;
-        color: #2E765E;
+        font-size: 1.5rem;
+      }
+
+      .journal__content fluent-text-area::part(control) {
+        width: 66vw;
         height: 40vh;
+        font-size: 1rem;
+      }
+
+      .journal__title fluent-text-field::part(root) {
+        line-height: 4rem;
+        height: 4rem;
+      }
+
+      .journal__title fluent-text-field::part(root),
+      .journal__content fluent-text-area::part(control) {
+        -webkit-backdrop-filter: blur(20px);
+        background: none;
+        backdrop-filter: blur(20px);
+        background-color: rgba(255,255,255,.3);
       }
 
       fluent-button {
@@ -59,8 +87,12 @@ export class AppJournal extends LitElement {
         margin: 25px;       
       }
 
+      .submit fluent-button::part(control):hover {
+        color: #fff;
+      }
+
       fluent-button::part(control):hover {
-        color: #2E765E;
+        color: #02452d;
       }
 
       fluent-dialog::part(control) {
@@ -74,12 +106,18 @@ export class AppJournal extends LitElement {
         border-radius: 15px;
         background-image: linear-gradient(to bottom, #45B08C, #78c7ad);
         color: white;   
+        border: none;
+      }
+
+      fluent-dialog::part(overlay) {
+        background: rgba(0, 0, 0, 0.6);
       }
 
       fluent-dialog h4 {
         text-align: center;
         margin-left: 5px;
         margin-right: 5px;
+        font-weight: 400;
       }
     `;
   }
@@ -93,7 +131,7 @@ export class AppJournal extends LitElement {
     let entry: JournalEntry = this.getJournalEntry();
     let entryCollection = await this.getEntryCollection(entry.date);
 
-    if(entry.title && entry.entry) {
+    if(entry.title) {
       this.pushNewEntry(entryCollection, entry);
       this.clearJournalFields();
     } else {
@@ -164,32 +202,51 @@ export class AppJournal extends LitElement {
       
       <div class="main">
         <hero-decor></hero-decor>
-        <div class="container">
-          <div class="title__entry">
+        <div class="journal">
+          <h1>Hello there! How are you today?</h1>
+          <div class="journal__slider">
+            <fluent-slider min="0" max="100" value="50" step="5" title="Select your emotion">
+              <fluent-slider-label position="0">
+                😔
+              </fluent-slider-label>
+              <fluent-slider-label position="25">
+                😕
+              </fluent-slider-label>
+              <fluent-slider-label position="50">
+                🙂
+              </fluent-slider-label>
+              <fluent-slider-label position="75">
+                😀
+              </fluent-slider-label>
+              <fluent-slider-label position="100">
+                🤩
+              </fluent-slider-label>
+            </fluent-slider>
+          </div>
+          <div class="journal__title">
             <fluent-text-field id="titleInput" appearance="lightweight" placeholder=${this.titlePlaceholder}>
-              <h2>Journal Title</h2>
             </fluent-text-field>
           </div>
-          <div class="journal__entry">
+          <div class="journal__content">
             <fluent-text-area  id="journalInput" appearance="lightweight" placeholder=${this.journalPlaceholder}> 
-              <h2>What's on your mind?</h2> 
             </fluent-text-area>
           </div>
           <div class="submit">
-            <fluent-button appearance="lightweight" @click=${this.submitEntry}>
-              Submit Entry
+            <fluent-button appearance="accent" @click=${this.submitEntry}>
+              Complete check-in
             </fluent-button>
           </div>
+        </div>
+
+        <fluent-dialog id="errorDialog" hidden=${true}>
+          <h4> Make sure to add a title for your daily mood journal.</h4>
+          <fluent-button appearance="lightweight" @click=${this.dismissWarningDialog}>
+            Try Again
+          </fluent-button>
+        </fluent-dialog>
+
       </div>
-
-      <fluent-dialog id="errorDialog" hidden=${true}>
-        <h4> Make sure to add both a title and an entry for your daily mood journal.</h4>
-        <fluent-button appearance="lightweight" @click=${this.dismissWarningDialog}>
-          Try Again
-        </fluent-button>
-      </fluent-dialog>
-
-    </div>
+      <app-footer></app-footer>
     `;
   }
 }

@@ -26,6 +26,16 @@ html, body {
     color: #333333;
 
     --accent-foreground-rest: #333333;
+    --neutral-foreground-rest: #333333;
+    --accent-fill-rest: #2E765E;
+    --accent-fill-hover: #276751;
+    --accent-fill-active: #1f664f;
+    --accent-fill-focus: #276751;
+    --focus-stroke-outer: #02452d;
+    --accent-stroke-control-rest: linear-gradient(#2E765E 90%, #02452d 100%);
+    --accent-stroke-control-hover: linear-gradient(#276751 90%, #02452d 100%);
+    --accent-stroke-control-focus: linear-gradient(#276751 90%, #02452d 100%);
+    --accent-stroke-control-active: #02452d;
   }
 }
 

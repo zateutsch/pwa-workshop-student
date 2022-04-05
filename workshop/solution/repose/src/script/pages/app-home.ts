@@ -67,17 +67,6 @@ export class AppHome extends LitElement {
         width: 100%;
         height: 100%;
       }
-
-      .footer {
-        background-color: #FAE8E0;
-        padding: 25px 50px;
-        z-index: 10;
-        position: absolute;
-        text-align: center;
-        bottom: 0;
-        left: 0;
-        right: 0;
-      }
     `;
   }
 
@@ -108,9 +97,7 @@ export class AppHome extends LitElement {
           </div>
         </div>
       </div>
-      <section id="footer" class="footer">
-        <span>© Microsoft 2022</span>
-      </section>
+      <app-footer></app-footer>
     `;
   }
 }
