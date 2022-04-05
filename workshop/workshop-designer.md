@@ -17,7 +17,7 @@ By the end of the workshop, students will be able to demonstrate their skills by
 ## Stage 3: Learning Plan
 
 - Generate a new Progressive Web App using PWA Studio or PWA Starter
-- Add functionalities such as mood tracking, journaling, motivation and healthy activity reminders
+- Add functionalities such as mood tracking and journaling
 - Make the PWA secure - deploy the PWA to an HTTPS endpoint
 - Make the PWA installable - add a web app manifest to the PWA
 - Make the PWA network-independent - register a service worker for the PWA
