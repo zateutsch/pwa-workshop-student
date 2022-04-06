@@ -93,7 +93,7 @@ export class AppHome extends LitElement {
             <fluent-anchor href="/journal" appearance="lightweight">Mood check-in</fluent-anchor>
           </div>
           <div class="hero__bottom-content">
-          <img src="assets/media/humaaans.svg" alt="Humans">
+          <img src="assets/media/humans.svg" alt="Humans">
           </div>
         </div>
       </div>

@@ -2,10 +2,6 @@
 
 Get started with Progressive Web Apps
 
-## Workshop Source
-
-List the workshop source from Microsoft Learn (usually a module)
-
 ## Stage 1: Desired Results
 
 Students will be skilled in building a Progressive Web App end to end.
