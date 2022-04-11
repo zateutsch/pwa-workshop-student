@@ -114,6 +114,31 @@ export class AppJournal extends LitElement {
         margin-right: 5px;
         font-weight: 400;
       }
+
+      @media screen and (max-width: 625px){
+        .journal h1 {
+          margin: 2rem 0px;
+        }
+
+        .journal__title fluent-text-field,
+        .journal__content fluent-text-area::part(control) {
+          width: 85vw;
+        }
+
+        .journal__slider fluent-slider {
+          min-width: 300px;
+        }
+
+        .journal__content fluent-text-area::part(control) {
+          height: 30vh;
+        }
+      }
+
+      @media screen and (max-width: 375px){
+        app-footer {
+          display: none;
+        }
+      }
     `;
   }
 

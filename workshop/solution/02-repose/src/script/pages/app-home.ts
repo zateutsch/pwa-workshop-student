@@ -111,6 +111,44 @@ export class AppHome extends LitElement {
         width: 100%;
         height: 100%;
       }
+
+      @media screen and (max-width: 840px) and (min-width: 625px) {
+        .hero__top-content {
+          margin: 4rem 2rem 0px;
+        }
+      }
+
+      @media screen and (max-width: 625px) and (min-width: 480px) {
+        .hero__top-content {
+          margin: 2rem 2rem 0px;
+        }
+
+        .hero__bottom-content {
+          margin-top: 7rem;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        header {
+          margin: 0 2rem;
+        }
+
+        .hero {
+          padding: 0 1rem;
+        }
+
+        .hero__top-content {
+          margin: 1rem 0;
+        }
+
+        .hero__top-content h1 {
+          font-size: 36px;
+        }
+
+        .hero__bottom-content {
+          margin-top: 7rem;
+        }
+      }
     `;
   }
 
