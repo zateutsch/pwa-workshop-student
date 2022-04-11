@@ -36,7 +36,6 @@ export class AppHeader extends LitElement {
 
   updated(changedProperties: any) {
     if (changedProperties.has('enableBack')) {
-      console.log('enableBack', this.enableBack);
     }
   }
 

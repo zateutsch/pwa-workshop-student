@@ -2,18 +2,13 @@ import { LitElement, css, html } from 'lit';
 import { customElement, property, query } from 'lit/decorators.js';
 import localforage from 'localforage';
 import { JournalEntry } from '../interfaces/journalEntry';
-
-const dbName: string = "journal_entries";
-var journalDB: any;
+import { dbName, getTodaysDate, getCurrentTime } from '../utils/journal';
 
 @customElement('app-journal')
 export class AppJournal extends LitElement {
-  
-  @property()
-  titlePlaceholder: string = "Title...";
-  @property()
-  journalPlaceholder: string = "Add some thoughts, feelings, or ideas here...";
-
+  @property() journalDB: any;
+  @property() titlePlaceholder: string = "Title...";
+  @property() journalPlaceholder: string = "Add some thoughts, feelings, or ideas here...";
 
   static get styles() {
     return css`
@@ -124,11 +119,11 @@ export class AppJournal extends LitElement {
 
   constructor() {
     super();
-    journalDB = localforage.createInstance({name: dbName});
+    this.journalDB = localforage.createInstance({name: dbName});
   }
 
-  async submitEntry() {
-    let entry: JournalEntry = this.getJournalEntry();
+  private async submitEntry() {
+    let entry: JournalEntry = this.createJournalEntry();
     let entryCollection = await this.getEntryCollection(entry.date);
 
     if(entry.title) {
@@ -139,9 +134,9 @@ export class AppJournal extends LitElement {
     }
   }
 
-  getJournalEntry(): JournalEntry {
-    let today: string = this.getTodaysDate();
-    let currentTime: string = this.getCurrentTime();
+  private createJournalEntry(): JournalEntry {
+    let today: string = getTodaysDate();
+    let currentTime: string = getCurrentTime();
 
     let journalEntry: JournalEntry = {
       date: today,
@@ -153,36 +148,26 @@ export class AppJournal extends LitElement {
     return journalEntry;
   }
 
-  getTodaysDate(): string {
-    let date = new Date();
-    return ((date.getMonth() + 1) as number).toString() + "/" + date.getDate().toString() + "/" + date.getFullYear().toString();
+  private async getEntryCollection(date: string) {
+    let entryCollection = await this.journalDB.getItem(date);
+    return entryCollection == null ? [] : entryCollection;
   }
 
-  getCurrentTime(): string {
-    let date = new Date();
-    return date.getHours().toString() + ":" + date.getMinutes().toString();
+  private pushNewEntry(entryCollection: any, entry: JournalEntry) {
+    entryCollection.push(entry);
+    this.journalDB.setItem(entry.date, entryCollection);
   }
 
-  async getEntryCollection(date: string) {
-    let entryCollection = await journalDB.getItem(date);
-    return entryCollection == null ? { } : entryCollection;
-  }
-
-  pushNewEntry(entryCollection: any, entry: JournalEntry) {
-    entryCollection[entry.time] = entry;
-    journalDB.setItem(entry.date, entryCollection);
-  }
-
-  clearJournalFields() {
+  private clearJournalFields() {
     this.titleInput.value = "";
     this.journalInput.value = "";
   }
 
-  showWarningDialog() {
+  private showWarningDialog() {
     this.errorDialog.hidden = false;
   }
 
-  dismissWarningDialog() {
+  private dismissWarningDialog() {
     this.errorDialog.hidden = true;
   }
 

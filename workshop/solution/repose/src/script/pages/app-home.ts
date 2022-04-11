@@ -1,5 +1,8 @@
 import { LitElement, css, html } from 'lit';
-import { property, customElement } from 'lit/decorators.js';
+import { property, customElement, state } from 'lit/decorators.js';
+import localforage from 'localforage';
+import { JournalEntry } from '../interfaces/journalEntry';
+import { dbName, getLast7Days, seedLocalStorage } from '../utils/journal';
 
 // For more info on the @pwabuilder/pwainstall component click here https://github.com/pwa-builder/pwa-install
 // import '@pwabuilder/pwainstall';
@@ -10,6 +13,9 @@ export class AppHome extends LitElement {
   // For more information on using properties and state in lit
   // check out this link https://lit.dev/docs/components/properties/
   @property() message = 'Welcome!';
+  @property() journalDB: any;
+  @property() last7Days = getLast7Days();
+  @state() private last7DaysJournal!: any;
 
   static get styles() {
     return css`
@@ -38,6 +44,7 @@ export class AppHome extends LitElement {
         color: white;
         margin: 4rem 5rem 0;
         text-align: center;
+        max-height: 25vh;
       }
 
       .hero__top-content h1 {
@@ -58,6 +65,43 @@ export class AppHome extends LitElement {
         color: #2E765E;
       }
 
+      .hero__top-content .entries {
+        display: flex;
+        flex-direction: column;
+        margin-top: 2rem;
+        max-height: 50vh;
+        overflow: scroll;
+      }
+
+      .hero__top-content .entries fluent-accordion-item.main-accordion {
+        height: fit-content;
+        -webkit-backdrop-filter: blur(20px);
+        background: none;
+        backdrop-filter: blur(20px);
+        background-color: rgba(255,255,255,.3);
+      }
+
+      .hero__top-content .entries fluent-accordion-item.main-accordion::part(heading) {
+        font-size: 1rem;
+        font-weight: 200;
+      }
+
+      .hero__top-content .entries fluent-accordion-item.main-accordion fluent-accordion-item.child-accordion {
+        background-color: rgb(216, 167, 177, 0.3);
+      }
+
+      .hero__top-content .entries fluent-accordion-item::part(region) {
+        background: inherit;
+      }
+
+      .hero__top-content .entries fluent-accordion-item::part(icon) {
+        border-radius: 50%;
+      }
+
+      .hero__top-content .entries fluent-accordion-item .panel .panel__body {
+        text-align: left;
+      }
+
       .hero__bottom-content {
         flex: 1 1 0px;
         height: 50vh;
@@ -72,12 +116,39 @@ export class AppHome extends LitElement {
 
   constructor() {
     super();
+
+    this.journalDB = localforage.createInstance({name: dbName});
   }
 
   async firstUpdated() {
-    // this method is a lifecycle even in lit
-    // for more info check out the lit docs https://lit.dev/docs/components/lifecycle/
-    console.log('This is your home page');
+    // seed local storage with sample entries
+    if (await this.journalDB.getItem(this.last7Days[0]) === null) {
+      seedLocalStorage(this.journalDB);
+    }
+
+    const last7DaysJournal = await this.getLast7DaysJournal();
+    if (last7DaysJournal && last7DaysJournal.length > 0) {
+      this.last7DaysJournal = last7DaysJournal;
+    }
+
+    console.log(this.last7DaysJournal);
+  }
+
+  private async getLast7DaysJournal() {
+    try {
+      let collection = [];
+      for (let i=0; i < this.last7Days.length; i++) {
+        collection.push(await this.journalDB.getItem(this.last7Days[i]));
+      }
+
+      if (collection.length > 0) {
+        return collection;
+      } else {
+        return null;
+      }
+    } catch (err) {
+      return;
+    }
   }
 
   render() {
@@ -91,6 +162,14 @@ export class AppHome extends LitElement {
             <h1>Intelligent Daily Mood Journal</h1>
             <p>Repose is your personal mood tracking companion that helps you organize and reflect upon your daily thoughts.</p>
             <fluent-anchor href="/journal" appearance="lightweight">Mood check-in</fluent-anchor>
+            <div class="entries">
+              <fluent-accordion-item class="main-accordion">
+                <span slot="heading">See your past journals</span>
+                <div class="panel">
+                  ${this.renderEntries(this.last7DaysJournal ? this.last7DaysJournal : [])}
+                </div>
+              </fluent-accordion-item>
+            </div>
           </div>
           <div class="hero__bottom-content">
           <img src="assets/media/humans.svg" alt="Humans">
@@ -98,6 +177,27 @@ export class AppHome extends LitElement {
         </div>
       </div>
       <app-footer></app-footer>
+    `;
+  }
+
+  renderEntries(entries: JournalEntry[][]) {
+    return html`
+      ${entries.map((entry: JournalEntry[]) => html`
+        <fluent-accordion-item class="child-accordion">
+          <span slot="heading">${entry&&entry[0].date ? `📆 Your thoughts from ${entry[0].date}` : 'Today'}</span>
+          <div class="panel">
+            ${entry ? entry.map((entry: JournalEntry) => html`
+              <fluent-accordion-item class="child-accordion">
+                <span slot="heading">${entry&&entry.time ? `📝 At ${entry.time} you wrote:` : ''}</span>
+                <div class="panel">
+                <p class="panel__title">${entry&&entry.title ? entry.title : ''}</p>
+                <p class="panel__body">${entry&&entry.entry ? entry.entry : ''}</p>
+                </div>
+              </fluent-accordion-item>
+            `) : 'Start journaling by clicking the "mood check-in" button 👆🏼'}
+          </div>
+        </fluent-accordion-item>
+      `)}
     `;
   }
 }
