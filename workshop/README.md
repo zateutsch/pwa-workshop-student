@@ -1,22 +1,18 @@
 # Get started with Progressive Web Apps
 
-## Module Source Link
-
-Link the source Learn module here
-
 ## Goals
 
 In this workshop, we will discuss *insert your topic*.
 
-| **Goal**              | *describe the goal of the workshop*                                    |
+| **Goal** | *describe the goal of the workshop*                                    |
 | ----------------------------- | --------------------------------------------------------------------- |
-| **What will you learn**       | *describe your learning goals*                                        |
-| **What you'll need**          | *link all the necessary tooling, subscriptions, and downloads needed* |
-| **Duration**                  | *specify the duration*                                                                |
-| **Microsoft Cloud Topics taught**                  | *M365, Azure, GitHub, other?*                                                                |
+| **What will you learn** | *describe your learning goals*                                        |
+| **What you'll need** | *link all the necessary tooling, subscriptions, and downloads needed* |
+| **Duration** | *specify the duration*                                                                |
+| **Microsoft Cloud Topics taught** | *M365, Azure, GitHub, other?*                                                                |
 | **Just want to try the app or see the solution?** | *an optional link to the completed project sample app or solution folder*                          |
 | **Slides** | [Powerpoint](slides.pptx) 
-                         
+
 ## Video
 
 Embed your Train the Trainer video here. Instructions on how to create a great video experience is [available on this page](../video-guidance.md).
