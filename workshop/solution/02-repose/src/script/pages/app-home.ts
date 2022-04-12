@@ -2,7 +2,7 @@ import { LitElement, css, html } from 'lit';
 import { property, customElement, state } from 'lit/decorators.js';
 import localforage from 'localforage';
 import { JournalEntry } from '../interfaces/journalEntry';
-import { dbName, getLast7Days, seedLocalStorage } from '../utils/journal';
+import { dbName, getLast7Days, getPlaceholderEntries } from '../utils/journal';
 
 // For more info on the @pwabuilder/pwainstall component click here https://github.com/pwa-builder/pwa-install
 // import '@pwabuilder/pwainstall';
@@ -159,13 +159,8 @@ export class AppHome extends LitElement {
   }
 
   async firstUpdated() {
-    // seed local storage with sample entries
-    if (await this.journalDB.getItem(this.last7Days[0]) === null) {
-      seedLocalStorage(this.journalDB);
-    }
-
     const last7DaysJournal = await this.getLast7DaysJournal();
-    if (last7DaysJournal && last7DaysJournal.length > 0) {
+    if (last7DaysJournal) {
       this.last7DaysJournal = last7DaysJournal;
     }
 
@@ -176,13 +171,17 @@ export class AppHome extends LitElement {
     try {
       let collection = [];
       for (let i=0; i < this.last7Days.length; i++) {
-        collection.push(await this.journalDB.getItem(this.last7Days[i]));
+        let currentEntry = await this.journalDB.getItem(this.last7Days[i]);
+        if(currentEntry) {
+          collection.push(currentEntry);
+        } else if (i == 0) {
+          collection.push(null);
+        }
       }
-
-      if (collection.length > 0) {
+      if (collection[0]) {
         return collection;
       } else {
-        return null;
+        return getPlaceholderEntries();
       }
     } catch (err) {
       return;
