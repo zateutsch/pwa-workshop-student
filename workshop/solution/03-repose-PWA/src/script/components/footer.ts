@@ -7,13 +7,17 @@ export class AppFooter extends LitElement {
     return css`
       .footer {
         background-color: #FAE8E0;
-        padding: 25px 50px;
+        height: 40px;
         z-index: 0;
         position: absolute;
         text-align: center;
         bottom: 0;
         left: 0;
         right: 0;
+      }
+
+      .footer span {
+        line-height: 40px;
       }
     `;
   }

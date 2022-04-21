@@ -191,6 +191,7 @@ export class AppHome extends LitElement {
 
   render() {
     return html`
+      <app-notification></app-notification>
       <app-header enableBack="${true}"></app-header>
       <div class="hero">
         <hero-decor></hero-decor>
@@ -213,7 +214,6 @@ export class AppHome extends LitElement {
           <img src="assets/media/humans.svg" alt="Humans">
           </div>
         </div>
-        <app-notification></app-notification>
       </div>
       <app-footer></app-footer>
     `;

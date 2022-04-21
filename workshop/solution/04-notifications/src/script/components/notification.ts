@@ -7,6 +7,9 @@ export class AppNotification extends LitElement {
     return css`
       .notification {
         z-index: 0;
+        float: right;
+        margin-top: 1rem;
+        margin-right: 1rem;
       }
     `;
   }
@@ -43,7 +46,7 @@ export class AppNotification extends LitElement {
   render() {
     return html`
       <div id="notification" class="notification">
-        <fluent-button appearance="accent" @click=${this.requestNotificationPermission}>Request Notification Permissions</fluent-button>
+        <fluent-button appearance="accent" @click=${this.requestNotificationPermission}>Request Permissions</fluent-button>
         <fluent-button appearance="accent" @click=${this.displayNotification}>Display Notifications</fluent-button>
 
       </div>
