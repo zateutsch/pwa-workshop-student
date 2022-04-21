@@ -22,7 +22,6 @@ export class AppNotification extends LitElement {
       Notification.requestPermission().then(permission => {
         if (permission === 'granted') {
           console.log('Notification permission granted.');
-          this.randomNotification();
         }
       });
     } else {
@@ -30,7 +29,7 @@ export class AppNotification extends LitElement {
     }
   }
 
-  private randomNotification() {
+  private displayNotification() {
     const notifTitle = "Hi";
     const notifBody = "This is a notification";
     const notifImg = `assets/media/toast.jpg`;
@@ -39,9 +38,7 @@ export class AppNotification extends LitElement {
       icon: notifImg,
     };
     new Notification(notifTitle, options);
-    setTimeout(this.randomNotification, 3000);
   }
-
 
   render() {
     return html`
