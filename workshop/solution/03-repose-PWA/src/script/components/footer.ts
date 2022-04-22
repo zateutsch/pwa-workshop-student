@@ -29,7 +29,7 @@ export class AppFooter extends LitElement {
   render() {
     return html`
       <section id="footer" class="footer">
-        <span>© Microsoft 2022</span>
+        <span>© Repose 2022</span>
       </section>
     `;
   }
