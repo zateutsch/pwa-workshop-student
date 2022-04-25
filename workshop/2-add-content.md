@@ -192,8 +192,12 @@ Let's do a quick recap of what we did in this step:
 - We updated the existing header component.
 - We created a new page called `app-journal.ts` that includes journaling functionality.
 
+Something to consider for the next steps if you are building a production ready app: Instead of using `localforage`, which stores journal entries in indexDB of your local browser's storage, you should consider using a more persistent storage solution.
+
 Next, we will make the Repose app secure, inatallable, network-independent, and work offline!
 
 ## Resources
 // TODO: 30days of PWA web components best practice
 // lit element tutorial
+// localforage docs
+// debugging with Edge dev tools?
