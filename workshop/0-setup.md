@@ -18,4 +18,4 @@ Make sure you go to the following resources to install the tools you need:
 
 ## Next steps
 
-Awesome! You have the tools you need to begin creating your Progressive Web App. Now, let's get to work. 👉🏼 Head to [1-create-pwa.md](1-create-pwa.md) to get started.
+Awesome! You have the tools you need to begin creating your Progressive Web App. Now, let's get to work. 👉🏼 Head to [1-create-pwa](1-create-pwa.md) to get started.

@@ -57,7 +57,7 @@ Congratulations! You now have an engaging PWA that can be installed on different
 
 You can further customize notifications by [adding actions](https://docs.microsoft.com/microsoft-edge/progressive-web-apps-chromium/how-to/notifications-badges#add-actions-to-notifications) to them. You will need to setup a [push service to send push notifications to your users](https://docs.microsoft.com/microsoft-edge/progressive-web-apps-chromium/how-to/notifications-badges#add-actions-to-notifications).
 
-Next, let's see how we can [audit the PWA and make it store ready](7-store-ready.md)!
+Next, let's see how we can 👉🏼 [audit the PWA and make it store ready](7-store-ready.md)!
 
 ## Resources
 

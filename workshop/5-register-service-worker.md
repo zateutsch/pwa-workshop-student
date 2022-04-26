@@ -50,7 +50,7 @@ To get a closer look at the full file, head over to Source tab in your browser. 
 
 In short, you don't need to register a service worker in PWA Studio generated projects if you are fine with the default options - pre-cache files and runtime `cacheFirst` needs. The service worker is automatically created and registered for you! And you have offline support right away.
 
-Now that you have a default service worker, let's talk about how to modify the configuration to enable advanced scenarios like [notifications](6-notifications.md).
+Now that you have a default service worker, let's talk about how to modify the configuration to enable advanced scenarios like 👉🏼 [notifications](6-notifications.md).
 
 ## Resources
 

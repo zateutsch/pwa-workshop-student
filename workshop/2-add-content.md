@@ -196,7 +196,7 @@ Let's do a quick recap of what you did in this step:
 
 Something to consider for the next steps if you are building a production ready app: Instead of using `localforage`, which stores journal entries in indexDB of your local browser's storage, you should consider using a more persistent storage solution.
 
-Next, let's make the Repose app [secure](3-deploy-to-Azure.md), [inatallable](4-add-web-manifest.md), [network-independent, and work offline](5-register-service-worker.md)!
+Next, let's make the Repose app 👉🏼 [secure](3-deploy-to-Azure.md), [installable](4-add-web-manifest.md), [network-independent, and work offline](5-register-service-worker.md)!
 
 ## Resources
 // TODO:

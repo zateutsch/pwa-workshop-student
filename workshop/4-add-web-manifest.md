@@ -88,7 +88,7 @@ To read more about the members of a manifest file. You can refer to [MDN docs](h
 
 ### Deploying the manifest
 
-Web app manifests are deployed in HTML pages using a <link> element in the <head> of a document. This was taken care of during the PWA generation process by PWA Studio so that you don't have to manually add it. You can find this `<link rel="manifest" href="/manifest.json" />` element in `index.html` file.
+Web app manifests are deployed in HTML pages using a `<link>` element in the `<head>` of a document. This was taken care of during the PWA generation process by PWA Studio so that you don't have to manually add it. You can find this `<link rel="manifest" href="/manifest.json" />` element in `index.html` file.
 
 ### See it in action
 
@@ -98,7 +98,7 @@ After saving the manifest file and deploying it to your Azure static web app, yo
 
 ## Summary and next steps
 
-Now you can install Repose as a standalone app on your device! Next, we will talk about how to [register Service Worker to make your app network-independent plus offline support](5-register-service-worker.md).
+Now you can install Repose as a standalone app on your device! Next, we will talk about how to 👉🏼 [register Service Worker to make your app network-independent plus offline support](5-register-service-worker.md).
 
 ## Resources
 // TODO:
