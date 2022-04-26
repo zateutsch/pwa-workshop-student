@@ -1,6 +1,6 @@
 # Make your PWA network-independent and work offline - register a service worker
 
-In this step, we will take a look at how service worker is registered.
+In this step, we will take a look at how service worker is registered. Note that you don't need to make any code changes in this step. Make sure you open the [`vite.config.ts` file](./solution/03-repose-PWA/vite.config.ts) as we walk you through the configurations.
 
 ## How do service workers work?
 
@@ -24,16 +24,15 @@ Good news! With PWA Studio, you don't need to create or register a service worke
 
 | property | value | description |
 | --- | --- | --- |
-| `registerType` | `autoUpdate` | when new content is available, the new service worker will update caches and reload all browser windows/tabs with the application open automatically, it must take the control for the application to work properly.
- |
+| `registerType` | `autoUpdate` | when new content is available, the new service worker will update caches and reload all browser windows/tabs with the application open automatically, it must take the control for the application to work properly. |
 | `manifest` | `false` |  Whether to add the `crossorigin="use-credentials"` attribute to `<link rel="manifest">` |
 | `workbox` | *based on mode* | [`generateSW` config options]((https://developer.chrome.com/docs/workbox/modules/workbox-build/#generatesw-mode)); [`injectManifest` config options](https://developer.chrome.com/docs/workbox/modules/workbox-build/#injectmanifest-mode)|
 
-Behind the scenes, `vite-plugin-pwa` is using [workbox-build](https://developer.chrome.com/docs/workbox/reference/workbox-build/) module to build the service worker. By default, it chooses the `generateSW` strategy which invokes the workbox `generateSW` mode. You will find this mode most useful when you want to 1) pre-cache files and 2) have simple runtime caching needs. The other mode is `injectManifest` which is useful when you want more control over your service worker, for instance, when you want to use other features like `WebPush`. You can read more on how to choose the mode in the [workbox-build docs](https://developer.chrome.com/docs/workbox/modules/workbox-build/#which-mode-to-use). We will keep the default `generateSW` mode for now. This is achieved through the default `VitePWA` configuration `strategies: 'generateSW'`. But we will switch to `injectManifest` mode in the next step when we enable notification feature.
+Behind the scenes, `vite-plugin-pwa` is using [workbox-build](https://developer.chrome.com/docs/workbox/reference/workbox-build/) module to build the service worker. By default, it chooses the `generateSW` strategy which invokes the workbox `generateSW` mode. You will find this mode most useful when you want to 1) pre-cache files and 2) have simple runtime caching needs. The other mode is `injectManifest` which is useful when you want more control over your service worker, for instance, when you want to use other features like `WebPush`. You can read more on how to choose the mode in the [workbox-build docs](https://developer.chrome.com/docs/workbox/modules/workbox-build/#which-mode-to-use). We will keep the default `generateSW` mode for now. This is achieved through the default `VitePWA` configuration `strategies: 'generateSW'`. But we will switch to `injectManifest` mode in the [next step](6-notifications.md) when we enable notification feature.
 
 ## What is `CacheFirst` strategy?
 
-There are a handful of handler options you can pass into `runtimeCaching` as part of `VitePWA` configuration. The `CacheFirst` strategy is one of them. It is an implementation of a [cache-first](https://developer.chrome.com/docs/workbox/caching-strategies-overview/#cache-first-falling-back-to-network) request strategy. It is useful for assets that have been revisioned, such as URLs like `/styles/example.a8f5f1.css`, since they can be cached for long periods of time.
+There are a handful of `handler` options you can pass into `runtimeCaching` as part of `VitePWA` configuration. The `CacheFirst` strategy is one of them. It is an implementation of a [cache-first](https://developer.chrome.com/docs/workbox/caching-strategies-overview/#cache-first-falling-back-to-network) request strategy. It is useful for assets that have been revisioned, such as URLs like `/styles/example.a8f5f1.css`, since they can be cached for long periods of time.
 
 For matching requests, the process goes like this:
 
@@ -45,7 +44,7 @@ For matching requests, the process goes like this:
 
 You can see the minified version of service worker code in the `dist` and `dev-dist` directory.
 
-To get a closer look at the full file, head over to Source tab in your browser. Expand folder `@vite-plugin-pwa` and you will see `virtual:pwa-register` that contains some of the lifecycle event we talked about in the previous section.
+To get a closer look at the full file, head over to Source tab in your browser. Expand folder `@vite-plugin-pwa` and you will see `virtual:pwa-register` that contains some of the lifecycle events we talked about in the previous section.
 
 ## Summary and next steps
 

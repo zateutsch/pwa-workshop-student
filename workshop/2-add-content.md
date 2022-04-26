@@ -173,9 +173,9 @@ Now when you click "Mood check-in" button, Repose app will navigate to journal p
 
 2. Add jounaling functionality to the `app-journal.ts` page with code from [this file](./solution/02-repose/src/script/pages/app-journal.ts).
 
-3. Add this [interface file](./solution/02-repose/src/script/interfaces/journalEntry.ts), `./src/script/interfaces/journalEntry.ts` to the project.
+3. Add this [interface file](./solution/02-repose/src/script/interfaces/journalEntry.ts) to the project.
 
-4. Add this [utility file](./solution/02-repose/src/script/utils/journal.ts), `./src/script/utils/journal.ts` to the project.
+4. Add this [utility file](./solution/02-repose/src/script/utils/journal.ts) to the project.
 
 5. Add `localforage` to the project devDependencies with this command: `npm i localforage -D`.
 
