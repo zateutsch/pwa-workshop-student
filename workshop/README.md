@@ -11,7 +11,7 @@ Have you heard about Progressive Web Apps (PWA) in the latest web development tr
 | **What you'll need** | A modern web browser like [Microsoft Edge](https://www.microsoft.com/edge). A code editor such as [Visual Studio Code](https://code.visualstudio.com/). [Git](https://git-scm.com/downloads). [Node.js](https://nodejs.org/en/). |
 | **Duration** | 1 - 1.5 hours |
 | **Microsoft Cloud Topics taught** | Azure Static Web Apps |
-| **Just want to try the app or see the solution?** | *// TODO: link to azure static web and/or solution folder* |
+| **Just want to try the app or see the solution?** | [Repose](https://gentle-mud-08de3661e.1.azurestaticapps.net/) |
 | **Slides** | *// TODO: [Powerpoint](slides.pptx)* |
 | **Author** | [Beth Pan](https://twitter.com/beth_panx) |
 
