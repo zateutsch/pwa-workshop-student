@@ -10,7 +10,7 @@ This time, the `vite-plugin-pwa` plugin will first build the custom service work
 
 ## Display notifications in action center
 
-PWAs can display notifications by using the [Notifications API](https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API). We will create a [notification component](./solution/04-notifications/src/script/components/notification.ts) in Repose app to enable this feature.
+PWAs can display notifications by using the [Notifications API](https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API). You will create a [notification component](./solution/04-notifications/src/script/components/notification.ts) in Repose app to enable this feature.
 
 ### Request permission to display notifications
 
@@ -57,7 +57,7 @@ Congratulations! You now have an engaging PWA that can be installed on different
 
 You can further customize notifications by [adding actions](https://docs.microsoft.com/microsoft-edge/progressive-web-apps-chromium/how-to/notifications-badges#add-actions-to-notifications) to them. You will need to setup a [push service to send push notifications to your users](https://docs.microsoft.com/microsoft-edge/progressive-web-apps-chromium/how-to/notifications-badges#add-actions-to-notifications).
 
-Next, let's see how we can [audit the PWA](7-audit-it.md) and [make it store ready](8-distribute-to-stores.md!
+Next, let's see how we can [audit the PWA](7-audit-it.md) and [make it store ready](8-distribute-to-stores.md)!
 
 ## Resources
 

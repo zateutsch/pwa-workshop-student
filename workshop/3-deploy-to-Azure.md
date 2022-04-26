@@ -14,7 +14,7 @@ Let's first talk about the three core building blocks for PWA development:
 
 ## HTTPS options
 
-1. Use a hosting service that supports HTTPS by default. Cloud Providers like [Azure](https://azure.microsoft.com/) offer options like [Azure App Service](https://azure.microsoft.com/services/app-service/web/) that can help. We will deploy Repose to an [Azure Static Web App](https://azure.microsoft.com/services/app-service/static/) in this step.
+1. Use a hosting service that supports HTTPS by default. Cloud Providers like [Azure](https://azure.microsoft.com/) offer options like [Azure App Service](https://azure.microsoft.com/services/app-service/web/) that can help. You will deploy Repose to an [Azure Static Web App](https://azure.microsoft.com/services/app-service/static/) in this step.
 2. Use your own hosting provider and create the required certificates using free services like [Let’s Encrypt](https://letsencrypt.org/docs/).
 
 **Note:** that browsers, such as Microsoft Edge, will let you use http://localhost (non-HTTPS) to preview and test your PWA locally - for debugging purposes only.

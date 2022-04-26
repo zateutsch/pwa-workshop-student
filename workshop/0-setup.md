@@ -1,6 +1,6 @@
 # Set up your environment
 
-First things first, let's get your development environment ready. We will be installing the tools we need to build our Progressive Web App. And we will create a repository to keep track our coding progress.
+First things first, let's get your development environment ready. You will be installing the tools needed to build the Progressive Web App. And you will create a repository to keep track our coding progress.
 
 ## Install tools
 
@@ -14,7 +14,7 @@ Make sure you go to the following resources to install the tools you need:
 ## Create a repository
 
 1. If you don't have a GitHub account, go ahead and [join GitHub](https://github.com/join). Then, [create a new public repository](https://github.com/new) named **repose**. If you've never made a GitHub repository before, check out the [documentation](https://docs.github.com/get-started/quickstart/create-a-repo) for more information. Make sure to select **Public** and to initialize the repository **without** a **README**.
-1. We will push the directory created in the next step to this repository.
+1. You will push the directory created in the next step to this repository.
 
 ## Next steps
 

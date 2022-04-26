@@ -59,7 +59,7 @@ npm run dev
 
 ## Push the solution to GitHub
 
-Remember that Git repository we created in the last step? Let's now push our solution to it using the following command from your project directory:
+Remember that Git repository you created in the last step? Let's now push our solution to it using the following command from your project directory:
 
 ```bash
 git remote remove origin

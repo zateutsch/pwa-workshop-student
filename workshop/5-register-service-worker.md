@@ -1,6 +1,6 @@
 # Make your PWA network-independent and work offline - register a service worker
 
-In this step, we will take a look at how service worker is registered. Note that you don't need to make any code changes in this step. Make sure you open the [`vite.config.ts` file](./solution/03-repose-PWA/vite.config.ts) as we walk you through the configurations.
+In this step, we will take a look at how service worker is registered. Note that you don't need to make any code changes in this step. Make sure you open the [`vite.config.ts` file](./solution/03-repose-PWA/vite.config.ts) as we walk through the configurations.
 
 ## How do service workers work?
 
@@ -28,7 +28,7 @@ Good news! With PWA Studio, you don't need to create or register a service worke
 | `manifest` | `false` |  Whether to add the `crossorigin="use-credentials"` attribute to `<link rel="manifest">` |
 | `workbox` | *based on mode* | [`generateSW` config options]((https://developer.chrome.com/docs/workbox/modules/workbox-build/#generatesw-mode)); [`injectManifest` config options](https://developer.chrome.com/docs/workbox/modules/workbox-build/#injectmanifest-mode)|
 
-Behind the scenes, `vite-plugin-pwa` is using [workbox-build](https://developer.chrome.com/docs/workbox/reference/workbox-build/) module to build the service worker. By default, it chooses the `generateSW` strategy which invokes the workbox `generateSW` mode. You will find this mode most useful when you want to 1) pre-cache files and 2) have simple runtime caching needs. The other mode is `injectManifest` which is useful when you want more control over your service worker, for instance, when you want to use other features like `WebPush`. You can read more on how to choose the mode in the [workbox-build docs](https://developer.chrome.com/docs/workbox/modules/workbox-build/#which-mode-to-use). We will keep the default `generateSW` mode for now. This is achieved through the default `VitePWA` configuration `strategies: 'generateSW'`. But we will switch to `injectManifest` mode in the [next step](6-notifications.md) when we enable notification feature.
+Behind the scenes, `vite-plugin-pwa` is using [workbox-build](https://developer.chrome.com/docs/workbox/reference/workbox-build/) module to build the service worker. By default, it chooses the `generateSW` strategy which invokes the workbox `generateSW` mode. You will find this mode most useful when you want to 1) pre-cache files and 2) have simple runtime caching needs. The other mode is `injectManifest` which is useful when you want more control over your service worker, for instance, when you want to use other features like `WebPush`. You can read more on how to choose the mode in the [workbox-build docs](https://developer.chrome.com/docs/workbox/modules/workbox-build/#which-mode-to-use). Let's will keep the default `generateSW` mode for now. This is achieved through the default `VitePWA` configuration `strategies: 'generateSW'`. But you will switch to `injectManifest` mode in the [next step](6-notifications.md) when you enable notification feature.
 
 ## What is `CacheFirst` strategy?
 
@@ -50,6 +50,6 @@ To get a closer look at the full file, head over to Source tab in your browser. 
 
 In short, you don't need to register a service worker in PWA Studio generated projects if you are fine with the default options - pre-cache files and runtime `cacheFirst` needs. The service worker is automatically created and registered for you! And you have offline support right away.
 
-Now that we have a default service worker, let's talk about how to modify the configuration to enable advanced scenarios like [notifications](6-notifications.md).
+Now that you have a default service worker, let's talk about how to modify the configuration to enable advanced scenarios like [notifications](6-notifications.md).
 
 ## Resources

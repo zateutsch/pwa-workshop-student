@@ -10,14 +10,14 @@ You can skip this step if you have other functionalities in mind. Or you can dow
 
 ## Update index.html
 
-We will first take a look at the entry point of your app, the `index.html` file. Let's make a few changes:
+First, take a look at the entry point of your app, the `index.html` file. Let's make a few changes:
 
 1. Update title field with `<title>Repose</title>`.
 1. Update description metadata field with `<meta name="description" content="This is a mental health journaling app" />`
 
 ## Update app-home.ts
 
-This is the home page of Repose. We will add a hero section - the first thing people see when they visit Repose.
+This is the home page of Repose. You will add a hero section - the first thing people see when they visit Repose.
 
 1. In the `render()` function, after `<app-header></app-header>`, add the following:
 
@@ -187,16 +187,16 @@ If you would like to add functionality to show existing journals, you can take a
 
 ## Summary and next steps
 
-Let's do a quick recap of what we did in this step:
-- We updated `index.html` file to include title and metadata for Repose app.
-- We did a complete redesign of the homepage including some custom CSS styles and creatives as background images.
-- We created a reusable component called `hero-decor` that renders as the hero section background. This is used in both `app-index.ts` and `app-journal.ts` pages. You can also use it in other pages as you create them.
-- We updated the existing header component.
-- We created a new page called `app-journal.ts` that includes journaling functionality.
+Let's do a quick recap of what you did in this step:
+- You updated `index.html` file to include title and metadata for Repose app.
+- You did a complete redesign of the homepage including some custom CSS styles and creatives as background images.
+- You created a reusable component called `hero-decor` that renders as the hero section background. This is used in both `app-index.ts` and `app-journal.ts` pages. You can also use it in other pages as you create them.
+- You updated the existing header component.
+- You created a new page called `app-journal.ts` that includes journaling functionality.
 
 Something to consider for the next steps if you are building a production ready app: Instead of using `localforage`, which stores journal entries in indexDB of your local browser's storage, you should consider using a more persistent storage solution.
 
-Next, we will make the Repose app [secure](3-deploy-to-Azure.md), [inatallable](4-add-web-manifest.md), [network-independent, and work offline](5-register-service-worker.md)!
+Next, let's make the Repose app [secure](3-deploy-to-Azure.md), [inatallable](4-add-web-manifest.md), [network-independent, and work offline](5-register-service-worker.md)!
 
 ## Resources
 // TODO: 30days of PWA web components best practice
