@@ -33,8 +33,7 @@ Embed your Train the Trainer video here. Instructions on how to create a great v
 
 By the end of this workshop, you will create a mood journal web app that can be installed across different platforms, be network-independent, work offline, and take advantage of platform-specific capabilities such as notifications.
 
-<!-- ![image of completed project](images/repose-home.png) -->
-<img src="images/repose-home.png" alt="completed project" title="completed project" style="border: 2px solid black; border-radius: 12px;">
+![image of completed project](images/home.png)
 
 ## Steps of the workshop // TODO: add time estimates
 
