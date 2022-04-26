@@ -53,3 +53,5 @@ In short, you don't need to register a service worker in PWA Studio generated pr
 Now that you have a default service worker, let's talk about how to modify the configuration to enable advanced scenarios like [notifications](6-notifications.md).
 
 ## Resources
+
+// TODO:

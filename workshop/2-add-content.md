@@ -199,7 +199,4 @@ Something to consider for the next steps if you are building a production ready 
 Next, let's make the Repose app [secure](3-deploy-to-Azure.md), [inatallable](4-add-web-manifest.md), [network-independent, and work offline](5-register-service-worker.md)!
 
 ## Resources
-// TODO: 30days of PWA web components best practice
-// lit element tutorial
-// localforage docs
-// debugging with Edge dev tools?
+// TODO:

@@ -35,7 +35,7 @@ By the end of this workshop, you will create a mood journal web app that can be 
 
 ![image of completed project](images/home.png)
 
-## Steps of the workshop // TODO: add time estimates
+## Steps of the workshop
 
 0. [Set up your environment](0-setup.md)
 1. [Create a new Progressive Web App using PWA Studio](1-create-pwa.md) ([solution: 01-starter](solution/01-starter/))
@@ -44,8 +44,7 @@ By the end of this workshop, you will create a mood journal web app that can be 
 4. [Make the PWA installable - add a web app manifest to the PWA](4-add-web-manifest.md) ([solution: 03-repose-PWA](solution/03-repose-PWA/public/manifest.json))
 5. [Make the PWA network-independent and work offline - register a service worker for the PWA](5-register-service-worker.md) ([solution: 03-repose-PWA](solution/03-repose-PWA/))
 6. [Make the PWA engaging - enable push notifications](6-notifications.md) ([solution: 04-notifications](solution/04-notifications/))
-7. Audit and test the PWA to ensure it meets the PWA guidelines
-8. Package the PWA to distribute to app stores
+7. [Audit and package the PWA to distribute to app stores](7-store-ready.md)
 
 ## Feedback
 

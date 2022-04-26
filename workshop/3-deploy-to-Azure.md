@@ -38,4 +38,4 @@ You have now deployed Repose to an Azure Static Web App. Let's [add all the nece
 
 ## Resources
 
-// TODO: more information on HTTPS from MDN, 30days of PWA.
+// TODO:
