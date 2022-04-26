@@ -94,7 +94,7 @@ Web app manifests are deployed in HTML pages using a <link> element in the <head
 
 After saving the manifest file and deploying it to your Azure static web app, you should see this button in the browser's address bar:
 
-![Install Repose PWA](./images/install.png)
+![Install Repose PWA](./images/4-install.png)
 
 ## Summary and next steps
 

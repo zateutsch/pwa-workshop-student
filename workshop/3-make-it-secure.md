@@ -25,7 +25,7 @@ Let's first talk about the three core building blocks for PWA development:
 1. Install [Azure Static Web Apps VSCode extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestaticwebapps)
 1. Create a new Azure Static Web App following [steps 1-5 in this tutorial](https://docs.microsoft.com/azure/static-web-apps/getting-started?tabs=vanilla-javascript#create-a-static-web-app).
 1. When asked to select the presets that match your application type. Select "Custom" option.
-![Custom selection in application type.](./images/extension-presets-no-framework.png)
+![Custom selection in application type.](./images/3-extension-presets-no-framework.png)
 1. For the app location prompt, enter `/`.
 1. For build output location, enter `dist`.
 1. Follow the rest of the steps in the [previous tutorial](https://docs.microsoft.com/azure/static-web-apps/getting-started?tabs=vanilla-javascript#create-a-static-web-app) to finish creating the Azure Static Web App and see the resource.
