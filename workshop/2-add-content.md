@@ -1,6 +1,8 @@
 # Add content to your PWA
 
-In this step, we will update the source files of the generated solution to add core functionalities such as mood tracking and journaling. You can skip this step if you have other functionalities in mind. Or you can download the completed solution from [this folder - solution/02-repose](./solution/02-repose/).
+In this step, we will update the source files of the generated solution to add core functionalities such as mood tracking and journaling. 
+
+You can skip this step if you have other functionalities in mind. Or you can download the completed solution from [this folder - solution/02-repose](./solution/02-repose/).
 
 ***
 **NOTE:** Make sure you have the solution running with this command `npm run dev`. So that as you save your changes, you can see them reflected in the browser. You can always stop the server by pressing the `ctrl + c` key combination.
