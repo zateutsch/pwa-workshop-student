@@ -98,7 +98,6 @@ After saving the manifest file and deploying it to your Azure static web app, yo
 
 ## Summary and next steps
 
-Now you can install Repose as a standalone app on your device! Next, we will talk about how to register Service Worker to make your app network-independent.
+Now you can install Repose as a standalone app on your device! Next, we will talk about how to [register Service Worker to make your app network-independent plus offline support](5-register-service-worker.md).
 
 ## Resources
-

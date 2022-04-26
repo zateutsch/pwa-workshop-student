@@ -40,13 +40,12 @@ By the end of this workshop, you will create a mood journal web app that can be 
 0. [Set up your environment](0-setup.md)
 1. [Create a new Progressive Web App using PWA Studio](1-create-pwa.md) ([solution: 01-starter](solution/01-starter/))
 2. [Add functionalities such as mood tracking and journaling](2-add-content.md) ([solution: 02-repose](solution/02-repose/))
-3. [Make the PWA secure - deploy the PWA to an HTTPS endpoint](3-make-it-secure.md) ([solution: 03-repose-PWA](solution/03-repose-PWA/))
-4. [Make the PWA installable - add a web app manifest to the PWA](4-make-it-installable.md) ([solution: 03-repose-PWA](solution/03-repose-PWA/public/manifest.json))
-5. [Make the PWA network-independent - register a service worker for the PWA](5-make-it-network-independent.md) ([solution: 03-repose-PWA](solution/03-repose-PWA/))
-6. [Make the PWA work offline - try a cache-first strategy](6-make-it-work-offline.md) ([solution: 03-repose-PWA](solution/03-repose-PWA/))
-7. [Make the PWA engaging - enable push notifications](7-make-it-engaging.md) ([solution: 04-notifications](solution/04-notifications/))
-8. Audit and test the PWA to ensure it meets the PWA guidelines
-9. Package the PWA to distribute to app stores
+3. [Make the PWA secure - deploy the PWA to an HTTPS endpoint](3-deploy-to-Azure.md) ([solution: 03-repose-PWA](solution/03-repose-PWA/))
+4. [Make the PWA installable - add a web app manifest to the PWA](4-add-web-manifest.md) ([solution: 03-repose-PWA](solution/03-repose-PWA/public/manifest.json))
+5. [Make the PWA network-independent and work offline - register a service worker for the PWA](5-register-service-worker.md) ([solution: 03-repose-PWA](solution/03-repose-PWA/))
+6. [Make the PWA engaging - enable push notifications](6-notifications.md) ([solution: 04-notifications](solution/04-notifications/))
+7. Audit and test the PWA to ensure it meets the PWA guidelines
+8. Package the PWA to distribute to app stores
 
 ## Feedback
 

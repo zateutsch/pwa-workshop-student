@@ -16,8 +16,7 @@ By the end of the workshop, students will be able to demonstrate their skills by
 - Add functionalities such as mood tracking and journaling
 - Make the PWA secure - deploy the PWA to an HTTPS endpoint
 - Make the PWA installable - add a web app manifest to the PWA
-- Make the PWA network-independent - register a service worker for the PWA
-- Make the PWA work offline - try a cache-first strategy
+- Make the PWA network-independent and work offline - register a service worker for the PWA
 - Make the PWA engaging - enable push notifications
 - Audit and test the PWA to ensure it meets the PWA guidelines
 - Package the PWA to distribute to app stores

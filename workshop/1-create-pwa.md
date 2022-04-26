@@ -76,7 +76,7 @@ git remote -v
 
 ## Summary and next steps
 
-You have now created your Progressive Web App! Next, add additional content such as mood journaling function to make it a functional web app.
+You have now created your Progressive Web App! Next, [add additional content](2-add-content.md) such as mood journaling function to make it a functional web app.
 
 ## Resources
 // TODO: 30 days of PWA resources

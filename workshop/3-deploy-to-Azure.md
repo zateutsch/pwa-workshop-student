@@ -34,7 +34,7 @@ Let's first talk about the three core building blocks for PWA development:
 
 ## Summary and next steps
 
-You have now deployed Repose to an Azure Static Web App. Let's add all the necessary members to the web app manifest file to make Repose installable.
+You have now deployed Repose to an Azure Static Web App. Let's [add all the necessary members to the web app manifest file to make Repose installable](4-add-web-manifest.md).
 
 ## Resources
 
